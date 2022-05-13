@@ -5,6 +5,9 @@ bp = Blueprint("game", __name__, url_prefix="")
 
 @bp.route("/play")
 def play():
+
+
+
     return render_template('game_play.html')
 
 
@@ -16,3 +19,8 @@ def intro():
 @bp.route("/tips")
 def tips():
     return render_template('tips.html')
+
+
+@bp.route("/marks")
+def marks():
+    return render_template('marks.html')
