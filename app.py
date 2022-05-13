@@ -3,9 +3,11 @@ CITS5507 Project2
 """
 from flask import Flask
 from flask_migrate import Migrate
+from models import *
 
 import config
 from exts import db
+
 from blueprints import game_bp
 from blueprints import user_bp
 
