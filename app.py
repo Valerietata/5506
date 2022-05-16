@@ -19,7 +19,7 @@ migrate = Migrate(app, db)
 app.register_blueprint(game_bp)
 app.register_blueprint(user_bp)
 
-db.create_all()
+# db.create_all()
 
 
 if __name__ == '__main__':
