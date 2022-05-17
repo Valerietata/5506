@@ -1,0 +1,128 @@
+body{
+    text-align:center;
+    font-family: 'Montserrat', sans-serif;
+    color:rgba(48, 73, 105, 0.753)
+}
+
+#board{
+    position: relative;
+    top:20px;
+    right: 250px;
+    width:540px;
+    height:540px;
+    margin:auto;
+    background-color: rgb(238, 249, 249);
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 2;
+}
+
+.completedtile{
+    background-color: rgb(186, 222, 243);
+}
+.tile{
+    width: 57.6px;
+    height:57.6px;
+    border-width: 1.2px;
+    border-style: solid;
+    border-color: rgb(162, 208, 246);
+    /* Text */
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.horizontallines{
+    border-bottom-color:rgb(15, 101, 171) ;
+    border-bottom-width:1.8px ;
+}
+.verticallines{
+    border-right-color:rgb(15, 101, 171);
+   
+}
+.startgame{
+    position: relative;
+    left: 335px;
+    bottom: 517px;
+}
+.newgamebutton{
+    margin-bottom: 43px;
+}
+
+#digits{
+    width: 540px;
+    height: 60px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.digit{
+
+        width: 52.8px;
+        border-width: 1.2px;
+        border-radius: 25%;
+        border-color: rgb(162, 208, 246);
+        background-color: rgb(204, 216, 249);
+        color: rgb(255, 255, 255);
+        font-size: 24px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        padding-top: 16.8px;
+        margin:3.4px;
+}
+.selectedDight{
+    background-color: rgba(108, 177, 220, 0.903);
+}
+.correctanswer{
+    background-color: rgb(132, 203, 132);
+}
+.wronganswer{
+    background-color: rgb(221, 117, 117);
+}
+/* result and submit section */
+#result{
+    position: relative;
+    left:342px;
+    bottom:460px;
+    width:30%;
+    height:190px;
+    margin-left: 500px;
+    border-style: dashed;
+    border-width: 4.2px;
+    border-radius: 20px;
+    border-color: #6a85e8; 
+    padding-bottom: 10px;
+
+}
+#wrongmoves{
+    color: rgb(84, 84, 142);
+    font-size: 3rem;
+}
+#errors{
+    color:rgb(127, 113, 171);
+    font-size: 3rem;
+    margin-top:5px;
+
+    
+}
+
+.submitbutton,.newgamebutton{
+    background-color: #6a85e8; /* Green */
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 23px 43px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5rem;
+}
+.submitbutton{
+    margin-top:5px;
+}
+.changebuttoncolor{
+    background-color:#4b5fa6 ;
+}

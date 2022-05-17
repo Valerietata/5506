@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+    <!-- font-style:Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;600&display=swap" rel="stylesheet">
+    <!-- CSS styles -->
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <!-- create a board -->
+    <div id="board">
+
+    </div>
+    <div class="startgame">
+    <button class="newgamebutton">NEW GAME</button>
+    <!-- create digits that can be selected -->
+
+    <div id="digits">
+        <div id="1" class="digit">1</div>
+        <div id="2" class="digit">2</div>
+        <div id="3" class="digit">3</div>
+        <div id="4" class="digit">4</div>
+        <div id="5" class="digit">5</div>
+        <div id="6" class="digit">6</div>
+        <div id="7" class="digit">7</div>
+        <div id="8" class="digit">8</div>
+        <div id="9" class="digit">9</div>
+    </div>
+</div>
+    <!-- result and submit section -->
+    <div id="result">
+        <h1 id="wrongmoves">Wrong Moves</h1>
+        <h2 id="errors">0</h2>
+        <button class="submitbutton">SUBMIT</button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
