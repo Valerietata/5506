@@ -1,20 +1,19 @@
 body{
     text-align:center;
     font-family: 'Montserrat', sans-serif;
-    color:rgba(48, 73, 105, 0.753)
+    color:rgba(48, 73, 105, 0.753);
+    font-weight:bolder
 }
 
 #board{
     position: relative;
-    top:20px;
-    right: 250px;
-    width:540px;
-    height:540px;
-    margin:auto;
-    background-color: rgb(238, 249, 249);
+    width: 33.899rem;
+    height: 33.rem;
+    margin: 3rem 1rem 3rem 10rem;
     display: flex;
     flex-wrap: wrap;
     z-index: 2;
+
 }
 
 .completedtile{
@@ -28,10 +27,44 @@ body{
     border-color: rgb(162, 208, 246);
     /* Text */
     font-size: 24px;
-    font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+@media (max-width:1413px) {
+    .col{
+        margin:auto;
+    }
+    #board{
+        margin: 3rem auto auto auto;
+    }
+    .rightsection,.leftsection{
+        margin-top:3rem;
+    }
+}
+@media (max-width: 518px){
+    #board{
+        position: relative;
+        width: 28.5rem;
+        height: 27rem;
+        display: flex;
+        flex-wrap: wrap;
+        z-index: 2;
+    }
+    .tile{
+        width: 3rem;
+        height:3rem;
+        border-width: 0.05rem;
+        border-style: solid;
+        border-color: rgb(162, 208, 246);
+        /* Text */
+        font-size: 1rem;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
 }
 .horizontallines{
     border-bottom-color:rgb(15, 101, 171) ;
@@ -39,15 +72,18 @@ body{
 }
 .verticallines{
     border-right-color:rgb(15, 101, 171);
-   
+    border-right-width:1.8px ;
+
 }
+.rightsection{
+    margin-top:3rem;
+}
+/* newgame button + panel below */
 .startgame{
     position: relative;
-    left: 335px;
-    bottom: 517px;
 }
 .newgamebutton{
-    margin-bottom: 43px;
+    margin-bottom: 2rem;
 }
 
 #digits{
@@ -62,7 +98,7 @@ body{
 
         width: 52.8px;
         border-width: 1.2px;
-        border-radius: 25%;
+        border-radius: 12px;
         border-color: rgb(162, 208, 246);
         background-color: rgb(204, 216, 249);
         color: rgb(255, 255, 255);
@@ -70,8 +106,23 @@ body{
         font-weight: bold;
         display: flex;
         justify-content: center;
-        padding-top: 16.8px;
+        padding-top: 12.5px;
         margin:3.4px;
+}
+@media (max-width: 518px) {
+    #digits{
+        width: 378px;
+        height: 20px;
+    }
+
+    .digit{
+
+            width: 37px;
+            border-width: 1.2px;
+            border-radius: 5px;
+            margin:1.5px;
+    }
+
 }
 .selectedDight{
     background-color: rgba(108, 177, 220, 0.903);
@@ -85,28 +136,27 @@ body{
 /* result and submit section */
 #result{
     position: relative;
-    left:342px;
-    bottom:460px;
-    width:30%;
-    height:190px;
-    margin-left: 500px;
+    width:25rem;
+    height:10rem;
     border-style: dashed;
     border-width: 4.2px;
     border-radius: 20px;
-    border-color: #6a85e8; 
+    border-color: #6a85e8;
+    margin: 4.3rem auto auto auto;
     padding-bottom: 10px;
 
 }
 #wrongmoves{
     color: rgb(84, 84, 142);
     font-size: 3rem;
+    padding-top: 1.5rem;
 }
 #errors{
     color:rgb(127, 113, 171);
     font-size: 3rem;
     margin-top:5px;
 
-    
+
 }
 
 .submitbutton,.newgamebutton{
@@ -114,15 +164,18 @@ body{
     border: none;
     border-radius: 12px;
     color: white;
-    padding: 23px 43px;
+    padding: 20px 43px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 1.5rem;
 }
 .submitbutton{
-    margin-top:5px;
+    margin-top:3rem;
 }
 .changebuttoncolor{
     background-color:#4b5fa6 ;
 }
+
+
+
