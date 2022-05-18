@@ -3,8 +3,8 @@ JSON_AS_ASCII = False
 HOSTNAME = '127.0.0.1'
 PORT = '3306'
 DATABASE = 'cits5505'
-USERNAME = 'hang'
-PASSWORD = 'hang'
+USERNAME = ''
+PASSWORD = ''
 DB_URI = 'mysql+pymysql://{}:{}@{}:{}/{}?charset=utf8'.format(USERNAME, PASSWORD, HOSTNAME, PORT, DATABASE)
 
 SQLALCHEMY_DATABASE_URI = DB_URI
