@@ -1,7 +1,7 @@
 """
 CITS5507 Project2
 """
-from flask import Flask
+from flask import Flask, g, session
 from flask_migrate import Migrate
 from models import *
 
@@ -19,7 +19,27 @@ migrate = Migrate(app, db)
 app.register_blueprint(game_bp)
 app.register_blueprint(user_bp)
 
+
 # db.create_all()
+
+@app.before_request
+def before_request():
+    user_id = session.get('user_id')
+    if user_id:
+        try:
+            user = UserModel.query.get(user_id)
+            # setattr(g, "user", user)
+            g.user = user
+        except:
+            g.user = None
+
+
+@app.context_processor
+def context_processor():
+    if hasattr(g, "user"):
+        return {"user": g.user}
+    else:
+        return {}
 
 
 if __name__ == '__main__':

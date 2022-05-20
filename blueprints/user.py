@@ -48,6 +48,12 @@ def register():
             return redirect(url_for("user.register"))
 
 
+@bp.route("/logout")
+def logout():
+    session.clear()
+    return redirect(url_for("user.login"))
+
+
 @bp.route("/ranking")
 def ranking():
     return render_template("ranking.html")
