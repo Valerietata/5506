@@ -7,5 +7,18 @@
 {% endblock %}
 
 {% block body %}
-<h1>USER RANKING</h1>
+
+    <div class="container">
+
+    {% for foo in context %}
+        username: {{ foo.username }}
+        wrong moves: {{ foo.wrong_moves }}
+        <br>
+        <br>
+
+    {% endfor %}
+
+    </div>
+
+
 {% endblock %}
