@@ -20,8 +20,8 @@
 {% block body %}
 
     <!-- create a board -->
+<div class="container-fluid gamesection">
     <div class="row">
-
         <div class="leftscetion col-lg-6 " id="board"></div>
         <div class="rightsection col col-lg-6">
             <div class="startgame">
@@ -51,8 +51,8 @@
             </form>
         </div>
     </div>
+</div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="{{ url_for('static',filename='js/index.js') }}"></script>
+
 
 {% endblock %}
