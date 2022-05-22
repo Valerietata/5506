@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session, flash, g, jsonify
 from werkzeug.security import generate_password_hash, check_password_hash
 
-from blueprints.forms import RegisterForm, LogingForm
+from blueprints.forms import RegisterForm, LogingForm, SubmitForm
 from exts import db
 from models import UserModel,RankingModel
 
@@ -59,26 +59,13 @@ def ranking():
     if request.method == "GET":
         return render_template("404.html")
     else:
-        form = RegisterForm(request.form)
-        if form.validate():
-            username = form.username.data
-            password = form.password.data
-            password_hashed = generate_password_hash(password)
-            user = UserModel(username=username, password=password_hashed)
-            db.session.add(user)
-            db.session.commit()
-            return redirect(url_for("user.login"))
-        else:
-            flash("Format error")
-            return redirect(url_for("user.register"))
-    rank = RankingModel.query.all()
-    print(rank)
-    # context = {
-    #     "rank_user":rank.rank_user,
-    #     "rank_id":rank.rank_id,
-    #     "wrong_moves":rank.wrong_moves,
-    # }
-    return redirect(url_for("user.show_ranking"))
+        form = SubmitForm(request.form)
+        name = g.user.username
+        wrong_moves = form.wrong_moves.data
+        ranking = RankingModel(rank_user=name, wrong_moves=wrong_moves)
+        db.session.add(ranking)
+        db.session.commit()
+        return redirect(url_for("user.show_ranking"))
 
 
 @bp.route("/showranking")
