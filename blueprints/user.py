@@ -39,8 +39,7 @@ def register():
         if form.validate():
             username = form.username.data
             password = form.password.data
-            password_hashed = generate_password_hash(password)
-            user = UserModel(username=username, password=password_hashed)
+            user = UserModel(username=username, password=password)
             try:
                 db.session.add(user)
                 db.session.commit()
