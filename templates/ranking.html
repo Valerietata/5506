@@ -3,6 +3,7 @@
 {% block title %}Ranking{% endblock %}
 
 {% block head %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/ranking.css') }}">
     <script type="text/javascript">
         window.onload = function () {
             populateData({{ context.json|safe }})
@@ -20,6 +21,7 @@
 
         }
     </script>
+
 {% endblock %}
 
 {% block body %}
@@ -30,7 +32,7 @@
         <div class="container">
             <table id="ranking" class="table table-hover text-center" width="100%">
                 <thead>
-                <tr>
+                <tr class="table-title">
                     <th>No.</th>
                     <th>Name</th>
                     <th>Wrong Moves</th>

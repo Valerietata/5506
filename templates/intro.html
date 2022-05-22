@@ -5,6 +5,10 @@
 
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static',filename='css/intro.css') }}">
+<!--font style for features title-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 {% endblock %}
 
 
@@ -20,7 +24,7 @@
         </div>
         <div class="col-lg-6 col-md-12 col-sm-12">
           <img class="title-image"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Sudoku_Puzzle_%28an_automorphic_puzzle_with_18_clues%29.svg/220px-Sudoku_Puzzle_%28an_automorphic_puzzle_with_18_clues%29.svg.png"
+            src="{{ url_for('static',filename='img/sudokuboard.jpg') }}"
             alt="iphone-mockup">
         </div>
       </div>

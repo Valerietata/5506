@@ -7,10 +7,9 @@
     padding:5% 11%;
 }
 .title-image{
-   margin-left:14rem;
-   padding-top: 0.5rem;
+   margin-left:10rem;
    padding-bottom:1.8rem;
-    width:52%;
+    width:68%;
     transform: rotate(27deg);
 }
 h1{
@@ -31,13 +30,14 @@ h1{
     position:relative;
     z-index:10;
     text-align: center;
-    color
 
 }
 .feature-sec p{
+font-family: 'Montserrat', sans-serif;
     color:rgb(191, 188, 188);
 }
 .feature-title{
+font-family: 'Pacifico', cursive;
 color:rgb(71, 67, 121);
 padding:1.3rem;
 }
@@ -53,17 +53,23 @@ padding:1.3rem;
 
 .rules{
   background-color:  #9bacea;
-  padding: 7% 13%;
-
+  padding: 7% 10%;
   color: white;
   line-height: 2.1;
 }
 .rules-sec{
   padding:5% 7%;
+  font-family: 'Montserrat', sans-serif;
 }
 .rules-title{
+  font-weight:bolder;
+  font-family: 'Montserrat', sans-serif;
   color: white;
   text-align: center;
   padding-top:2% ;
   padding-bottom: 2%;
+}
+.text-center{
+    background-color:  #9bacea;
+    color: white;
 }

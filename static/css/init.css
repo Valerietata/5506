@@ -14,13 +14,16 @@ body {
 }
 
 .navbar-brand {
-    padding-left: 9.055rem;
+    padding-left: 9.052rem;
     font-family: 'Montserrat', sans-serif;
     font-style: bold;
     font-size: 3.1rem;
 }
 
 /* add some space to the navbar item */
+body{
+font-family: 'Montserrat', sans-serif;
+}
 .nav-item {
     margin: 0 1.3rem;
     font-family: 'Montserrat', sans-serif;
@@ -33,6 +36,6 @@ h1 {
     color: white;
 }
 .text-center{
-    background-color: #6e88e5;
+    background-color:  #9bacea;
     color: white;
 }
