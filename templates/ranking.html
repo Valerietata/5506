@@ -3,22 +3,38 @@
 {% block title %}Ranking{% endblock %}
 
 {% block head %}
-
+<script defer src="{{ url_for('static',filename='js/ranking.js') }}"></script>
+    <script>
+        var js_data = '{{ context.json }}';
+        console.log(js_data.length)
+    </script>
 {% endblock %}
 
 {% block body %}
 
-    <div class="container">
+    <div id="dataid" d="{{ context.json|tojson }}" style="display:none"></div>
 
-    {% for foo in context %}
-        username: {{ foo.username }}
-        wrong moves: {{ foo.wrong_moves }}
-        <br>
-        <br>
+    <section class="container-fluid p-5 ">
+        <div class="container">
+            <table id="ranking" class="table table-hover text-center" width="100%">
+                <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Name</th>
+                    <th>Wrong Moves</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
 
-    {% endfor %}
+    </section>
 
-    </div>
+    {{ context.json }}
+
+
 
 
 {% endblock %}
+

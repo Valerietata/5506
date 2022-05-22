@@ -13,10 +13,10 @@ function populateData(packJson) {
 	for(var i = 0; i < packJson.length; i++){
 		// console.log(packJson[i])
 		cnt++;
-		// $("#ranking > tbody").append("<tr></tr>");
-		// $("#ranking tr:last").append("<td>" + cnt + "</td>");
-		// $("#ranking tr:last").append("<td>" + packJson[i].username + "</td>");
-		// $("#ranking tr:last").append("<td>" + packJson[i].wrong_moves + "</td>");
+		$("#ranking > tbody").append("<tr></tr>");
+		$("#ranking tr:last").append("<td>" + cnt + "</td>");
+		$("#ranking tr:last").append("<td>" + packJson[i].username + "</td>");
+		$("#ranking tr:last").append("<td>" + packJson[i].wrong_moves + "</td>");
 	}
 
 }
