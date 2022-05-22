@@ -100,8 +100,24 @@ $(".submitbutton").click(function () {
             }
         }
     }
-    //pass error numbers to back end
-    alert(' Congratulations');
+    //pass wrongsteps to back end
+        var list = [];
+        var data = wrongsteps;
+        list.push(data);
+        $.ajax(
+                {
+                    url:"http://127.0.0.1:5000/user/ranking",
+                    type:"post",
+                    data : {
+                        "data" : JSON.stringify(list)
+                    },
+                    success: function(d){
+                        alert("Congratulations!");
+                    },
+                    error : function (d){
+                        alert("Opps, connection failed....");
+                    }
+                })
 
 })
 
