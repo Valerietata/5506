@@ -1,0 +1,30 @@
+
+body{
+background-color:#6e88e5;
+    color: white;
+}
+.form-label{
+text-align:left;
+}
+.inputsec{
+padding:12% 1% 12% 6%;
+text-align: left;
+}
+.form-control, .btn{
+width:80%;
+margin-bottom:2rem;
+}
+.btn{
+background-color:#394cf3;
+border-style:none;
+font-style:bolder;
+}
+
+
+
+
+
+ .text-center{
+    background-color: #6e88e5;
+    color: white;
+}
