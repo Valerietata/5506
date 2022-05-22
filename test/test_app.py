@@ -54,6 +54,8 @@ def test_play_logged_page(new_app):
     login(new_app)
     rv = new_app.get('http://localhost:5000/play')
     assert rv.status_code == 200
+    rv = new_app.post('http://localhost:5000/user/ranking', data=dict(wrong_moves=77))
+    assert rv.headers['Location'] == 'http://localhost:5000/user/showranking'
 
 
 def test_rank_logged_page(new_app):
