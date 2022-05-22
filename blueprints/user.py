@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session, flash, g, jsonify
+from sqlalchemy.exc import IntegrityError
 from werkzeug.security import generate_password_hash, check_password_hash
 
 from blueprints.forms import RegisterForm, LogingForm, SubmitForm
@@ -40,8 +41,12 @@ def register():
             password = form.password.data
             password_hashed = generate_password_hash(password)
             user = UserModel(username=username, password=password_hashed)
-            db.session.add(user)
-            db.session.commit()
+            try:
+                db.session.add(user)
+                db.session.commit()
+            except IntegrityError:
+                flash("The username cannot be used because it has a duplicate name.")
+                return redirect(url_for("user.register"))
             return redirect(url_for("user.login"))
         else:
             flash("Format error")
@@ -77,7 +82,7 @@ def show_ranking():
         content = {'username': result.rank_user, 'wrong_moves':result.wrong_moves}
         payload.append(content)
         content = {}
-    return render_template("ranking.html", context=payload)
+    return render_template("ranking.html", context=jsonify(payload))
 
 
 @bp.route("/allranking")
@@ -89,4 +94,4 @@ def all_ranking():
         content = {'username': result.rank_user, 'wrong_moves': result.wrong_moves}
         payload.append(content)
         content = {}
-    return render_template("ranking.html", context=payload)
+    return render_template("ranking.html", context=jsonify(payload))
