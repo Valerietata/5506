@@ -3,16 +3,28 @@
 {% block title %}Ranking{% endblock %}
 
 {% block head %}
-<script defer src="{{ url_for('static',filename='js/ranking.js') }}"></script>
-    <script>
-        var js_data = '{{ context.json }}';
-        console.log(js_data.length)
+    <script type="text/javascript">
+        window.onload = function () {
+            populateData({{ context.json|safe }})
+        }
+
+        function populateData(packJson) {
+            var cnt = 0;
+            for (var i = 0; i < packJson.length; i++) {
+                cnt++;
+                $("#ranking > tbody").append("<tr></tr>");
+                $("#ranking tr:last").append("<td>" + cnt + "</td>");
+                $("#ranking tr:last").append("<td>" + packJson[i].username + "</td>");
+                $("#ranking tr:last").append("<td>" + packJson[i].wrong_moves + "</td>");
+            }
+
+        }
     </script>
 {% endblock %}
 
 {% block body %}
 
-    <div id="dataid" d="{{ context.json|tojson }}" style="display:none"></div>
+    <div id="dataid" d="{{ context.json }}" style="display:none"></div>
 
     <section class="container-fluid p-5 ">
         <div class="container">
@@ -30,9 +42,6 @@
         </div>
 
     </section>
-
-    {{ context.json }}
-
 
 
 
