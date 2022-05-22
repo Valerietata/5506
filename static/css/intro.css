@@ -1,0 +1,69 @@
+.title{
+    background-color: #6e88e5;
+    color: white;
+    text-align: left;
+    font-weight: bolder;
+    font-size:4.5rem;
+    padding:5% 11%;
+}
+.title-image{
+   margin-left:14rem;
+   padding-top: 0.5rem;
+   padding-bottom:1.8rem;
+    width:52%;
+    transform: rotate(27deg);
+}
+h1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: bolder;
+    line-height: 1.5;
+    color:white;
+}
+
+/* if using margin in the css box below, it would seperate the whole row into two parts */
+.feature{
+
+    background-color:white;
+}
+.feature-sec{
+    padding:10% 7%;
+    position:relative;
+    z-index:10;
+    text-align: center;
+    color
+
+}
+.feature-sec p{
+    color:rgb(191, 188, 188);
+}
+.feature-title{
+color:rgb(71, 67, 121);
+padding:1.3rem;
+}
+
+.icon {
+  color: #899bde;
+  margin-bottom: 1.5rem;
+}
+
+.icon:hover {
+  color:#6c85dd;
+}
+
+.rules{
+  background-color:  #9bacea;
+  padding: 7% 13%;
+
+  color: white;
+  line-height: 2.1;
+}
+.rules-sec{
+  padding:5% 7%;
+}
+.rules-title{
+  color: white;
+  text-align: center;
+  padding-top:2% ;
+  padding-bottom: 2%;
+}

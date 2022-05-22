@@ -1,58 +1,119 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block title %}Tips{% endblock %}
-
-{% block head %}
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sudoku</title>
-    <!-- bootstrap -->
-
+    <!--    bootstrap-->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+    <!--    css style-->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/game_play.css') }}">
     <!-- font-style:Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;600&display=swap" rel="stylesheet">
-    <!-- CSS styles -->
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css' )}}">
-{% endblock %}
 
-{% block body %}
 
-    <!-- create a board -->
-<div class="container-fluid gamesection">
-    <div class="row">
-        <div class="leftscetion col-lg-6 " id="board"></div>
-        <div class="rightsection col col-lg-6">
-            <div class="startgame">
-                <button class="newgamebutton">NEW GAME</button>
-                <!-- create digits that can be selected -->
+</head>
 
-                <div id="digits">
-                    <div id="1" class="digit">1</div>
-                    <div id="2" class="digit">2</div>
-                    <div id="3" class="digit">3</div>
-                    <div id="4" class="digit">4</div>
-                    <div id="5" class="digit">5</div>
-                    <div id="6" class="digit">6</div>
-                    <div id="7" class="digit">7</div>
-                    <div id="8" class="digit">8</div>
-                    <div id="9" class="digit">9</div>
-                </div>
+<body>
+    <div class="container-fluid navbarcontainer ">
+        <nav class="navbar navbar-expand-lg navbar-light  ">
+            <!-- to make a drop down button -->
+            <a class="navbar-brand" style="color:rgb(241, 241, 244);" href="{{ url_for('game.intro') }}">
+                Sudoku</a>
+            <div class="collapse navbar-collapse" id="navbar-nav"></div>
+            <!-- id in data target should be id of the navbar div below -->
+            <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse  " id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" style="color:rgb(241, 241, 244);" aria-current="page"
+                            href="{{ url_for('game.play') }}">Start Game</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" style="color:rgb(241, 241, 244);"aria-current="page"
+                            href="{{ url_for('user.all_ranking') }}">Ranking</a>
+                    </li>
+                    {% if user %}
+                    <li class="nav-item active">
+                        <a class="nav-link" style="color:rgb(241, 241, 244);" aria-current="page"
+                            href="{{ url_for('user.show_ranking') }}">{{ user.username }}</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" style="color:rgb(241, 241, 244);" aria-current="page"
+                            href="{{ url_for('user.logout') }}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item active">
+                        <a class="nav-link" style="color:rgb(241, 241, 244);" aria-current="page"
+                            href="{{ url_for('user.login') }}">Login</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" style="color:rgb(241, 241, 244);" aria-current="page"
+                            href="{{ url_for('user.register') }}">Sign Up</a>
+                    </li>
+                    {% endif %}
+                </ul>
             </div>
-            <!-- result and submit section -->
-            <form method="post" action="{{ url_for("user.ranking") }}">
+        </nav>
+    </div>
+
+        <!-- create a board -->
+    <div class="container-fluid gamesection">
+
+
+        <div class="row">
+
+            <div class="leftscetion col-lg-6 " id="board"></div>
+            <div class="rightsection col col-lg-6">
+                <div class="startgame">
+                    <button class="newgamebutton">NEW GAME</button>
+                    <!-- create digits that can be selected -->
+
+                    <div id="digits">
+                        <div id="1" class="digit">1</div>
+                        <div id="2" class="digit">2</div>
+                        <div id="3" class="digit">3</div>
+                        <div id="4" class="digit">4</div>
+                        <div id="5" class="digit">5</div>
+                        <div id="6" class="digit">6</div>
+                        <div id="7" class="digit">7</div>
+                        <div id="8" class="digit">8</div>
+                        <div id="9" class="digit">9</div>
+                    </div>
+                </div>
+                <!-- result and submit section -->
                 <div id="result">
                     <h1 id="wrongmoves">Wrong Moves</h1>
-                    <!--<label for="errors"></label>Wrong Moves<input id="errors" value=0>
-                    --><h2 id="errors">0</h2>
-                    <button type="submit" class="submitbutton">SUBMIT</button>
+                    <h2 id="errors">0</h2>
+                    <button class="submitbutton">SUBMIT</button>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
-</div>
+    <footer class="bg-light text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-center p-3" >
+          © 2020 Copyright: MDBootstrap.com
+        </div>
+        <!-- Copyright -->
+      </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5d90e8600e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <script src="{{ url_for('static',filename='js/index.js') }}"></script>
 
+</body>
 
-{% endblock %}
+</html>

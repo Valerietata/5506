@@ -3,27 +3,26 @@ body {
     text-align: center;
 
     font-weight: bolder;
-
 }
 
 .navbarcontainer {
 
-    background-color: #899bde;
-    padding-top: 0.2rem;
-    padding-left: 6rem;
+    background-color: #6e88e5;
+    padding-top: 2rem;
     padding-right: 8rem;
     padding-bottom: 0.4rem;
 }
 
 .navbar-brand {
+    padding-left: 9.055rem;
     font-family: 'Montserrat', sans-serif;
     font-style: bold;
-    font-size: 2.5rem;
+    font-size: 3.1rem;
 }
 
 /* add some space to the navbar item */
 .nav-item {
-    margin: 0 1.5rem;
+    margin: 0 1.3rem;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -31,5 +30,9 @@ h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 3.5rem;
     line-height: 1.5;
+    color: white;
+}
+.text-center{
+    background-color: #6e88e5;
     color: white;
 }

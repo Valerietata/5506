@@ -20,7 +20,8 @@
     <div class="container-fluid navbarcontainer ">
         <nav class="navbar navbar-expand-lg navbar-light  ">
             <!-- to make a drop down button -->
-            <a class="navbar-brand" style="color:white;" href="{{ url_for('game.intro') }}">Sudoku</a>
+            <a class="navbar-brand" style="color:rgb(241, 241, 244);" href="{{ url_for('game.intro') }}">
+                Sudoku</a>
             <div class="collapse navbar-collapse" id="navbar-nav"></div>
             <!-- id in data target should be id of the navbar div below -->
             <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler"
@@ -31,29 +32,29 @@
             <div class="collapse navbar-collapse  " id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" style="color:white;" aria-current="page"
+                        <a class="nav-link" style="color:rgb(241, 241, 244);" aria-current="page"
                             href="{{ url_for('game.play') }}">Start Game</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" style="color:white;" aria-current="page"
+                        <a class="nav-link" style="color:rgb(241, 241, 244);" aria-current="page"
                             href="{{ url_for('user.all_ranking') }}">Ranking</a>
                     </li>
                     {% if user %}
                     <li class="nav-item active">
-                        <a class="nav-link" style="color:white;" aria-current="page"
+                        <a class="nav-link" style="color:rgb(241, 241, 244);" aria-current="page"
                             href="{{ url_for('user.show_ranking') }}">{{ user.username }}</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" style="color:white;" aria-current="page"
+                        <a class="nav-link" style="color:rgb(241, 241, 244);" aria-current="page"
                             href="{{ url_for('user.logout') }}">Logout</a>
                     </li>
                     {% else %}
                     <li class="nav-item active">
-                        <a class="nav-link" style="color:white;" aria-current="page"
+                        <a class="nav-link" style="color:rgb(241, 241, 244);" aria-current="page"
                             href="{{ url_for('user.login') }}">Login</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" style="color:white;" aria-current="page"
+                        <a class="nav-link" style="color:rgb(241, 241, 244);" aria-current="page"
                             href="{{ url_for('user.register') }}">Sign Up</a>
                     </li>
                     {% endif %}
@@ -63,6 +64,7 @@
     </div>
 
 {% block body %}{% endblock %}
+
     <footer class="bg-light text-center text-lg-start">
         <!-- Copyright -->
         <div class="text-center p-3">
@@ -70,13 +72,13 @@
         </div>
         <!-- Copyright -->
     </footer>
+
 <!--    <div class="container-fluid pt-5 mt-5"></div>-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/5d90e8600e.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
 
 </body>
 
