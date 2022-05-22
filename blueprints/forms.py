@@ -11,3 +11,7 @@ class RegisterForm(wtforms.Form):
 class LogingForm(wtforms.Form):
     username = wtforms.StringField(validators=[length(min=3, max=20)])
     password = wtforms.StringField(validators=[length(min=3, max=20)])
+
+
+class SubmitForm(wtforms.Form):
+    wrong_moves = wtforms.IntegerField()
