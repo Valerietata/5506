@@ -112,23 +112,22 @@ $(".submitbutton").click(function () {
         }
     }
     //pass wrongsteps to back end
-        var list = [];
-        var data = wrongsteps;
-        list.push(data);
-        $.ajax(
-                {
-                    url:"http://127.0.0.1:5000/user/ranking",
-                    type:"post",
-                    data : {
-                        "wrong_moves" : data
-                    },
-                    success: function(d){
-                        alert("Congratulations!");
-                    },
-                    error : function (d){
-                        alert("Opps, connection failed....");
-                    }
-                })
+    var data = wrongsteps;
+    $.ajax(
+            {
+                url:"http://127.0.0.1:5000/user/ranking",
+                type:"post",
+                data : {
+                    "wrong_moves" : data
+                },
+                success: function(d){
+                    alert("Congratulations!");
+                    window.location.replace("http://127.0.0.1:5000/user/allranking");
+                },
+                error : function (d){
+                    alert("Opps, connection failed....");
+                }
+            })
 
 })
 
