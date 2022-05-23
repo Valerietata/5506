@@ -15,7 +15,6 @@ font-family: 'Montserrat', sans-serif;
 .navbar-brand {
     padding-left: 9rem;
     font-family: 'Montserrat', sans-serif;
-    font-style: bold;
     font-size: 3.1rem;
 }
 
@@ -41,7 +40,7 @@ h1 {
 #board {
     position: relative;
     width: 33.899rem;
-    height: 33.rem;
+    height: 32.4rem;
     margin: 3rem 4rem 4rem 5.5rem;
     display: flex;
     flex-wrap: wrap;
