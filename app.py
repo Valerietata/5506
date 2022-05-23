@@ -1,7 +1,7 @@
 """
 CITS5507 Project2
 """
-from flask import Flask, g, session
+from flask import Flask, g, session, render_template
 from flask_migrate import Migrate
 from models import *
 
@@ -41,6 +41,10 @@ def context_processor():
     else:
         return {}
 
+
+@app.errorhandler(404)
+def page_unauthorized(error):
+    return render_template('404.html', error_info=error), 404
 
 if __name__ == '__main__':
     app.run()
