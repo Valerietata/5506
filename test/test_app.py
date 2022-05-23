@@ -44,6 +44,13 @@ def test_play_page(new_app):
     assert rv.headers['Location'] == "http://localhost:5000/user/login"
 
 
+def test_register(new_app):
+    rv = new_app.post('http://localhost:5000/user/register',
+                      data=dict(username='Test1', password='test1', password_confirm='test1'))
+    assert rv.status_code == 302
+    assert rv.headers['Location'] == 'http://localhost:5000/user/login'
+
+
 def login(new_app):
     """Login helper function"""
     with new_app.session_transaction() as sess:
@@ -65,13 +72,6 @@ def test_rank_logged_page(new_app):
 
 
 def test_login(new_app):
-    rv = new_app.post('http://localhost:5000/user/login', data=dict(username='hang', password='hang'))
+    rv = new_app.post('http://localhost:5000/user/login', data=dict(username='Test1', password='test1'))
     assert rv.status_code == 302
     assert rv.headers['Location'] == 'http://localhost:5000/'
-
-
-def test_register(new_app):
-    rv = new_app.post('http://localhost:5000/user/register',
-                      data=dict(username='Test1112', password='test111', password_confirm='test111'))
-    assert rv.status_code == 302
-    assert rv.headers['Location'] == 'http://localhost:5000/user/login'
