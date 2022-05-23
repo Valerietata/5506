@@ -105,6 +105,32 @@ h1 {
     }
 
 }
+@media (max-width: 456px) {
+    #board {
+        position: relative;
+        width: 19rem;
+        height: 18rem;
+        display: flex;
+        flex-wrap: wrap;
+        z-index: 2;
+    }
+
+    .tile {
+        width: 1.8rem;
+        height: 2rem;
+        border-width: 0.05rem;
+        border-style: solid;
+        border-color: rgb(162, 208, 246);
+        /* Text */
+        font-size: 1rem;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
 
 .horizontallines {
     border-bottom-color: rgb(15, 101, 171);
@@ -169,6 +195,21 @@ h1 {
     }
 
 }
+@media (max-width: 360px) {
+    #digits {
+        width: 270px;
+        height: 13.3px;
+    }
+
+    .digit {
+
+        width: 27px;
+        border-width: 1.2px;
+        border-radius: 3px;
+        margin: 1px;
+    }
+
+}
 
 .selectedDight {
     background-color: rgba(108, 177, 220, 0.903);
@@ -209,6 +250,35 @@ h1 {
     margin-top: 1.2rem;
 
 
+}
+@media(max-width:360px){
+#result {
+    position: relative;
+    width: 15rem;
+    height: 7rem;
+    border-style: dashed;
+    border-width: 4.2px;
+    border-radius: 20px;
+    border-color: #768feb;
+    margin: 4.5rem auto auto auto;
+
+
+}
+
+#wrongmoves {
+    color: rgb(84, 84, 142);
+    font-size: 2rem;
+    padding-top: 0.5rem;
+
+}
+
+#errors {
+    color: rgb(127, 113, 171);
+    font-size: 2rem;
+    margin-top: 0.5rem;
+
+
+}
 }
 
 .submitbutton,
