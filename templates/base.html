@@ -45,7 +45,7 @@
                             href="{{ url_for('user.show_ranking') }}">{{ user.username }}</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" style="color:rgb(241, 241, 244);" aria-current="page"
+                        <a class="nav-link" style="color:rgb(241, 241, 244);" aria-current="page" id="logout"
                             href="{{ url_for('user.logout') }}">Logout</a>
                     </li>
                     {% else %}
